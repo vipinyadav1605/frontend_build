@@ -1,0 +1,93 @@
+/* Reset & full-page setup */
+body{
+  height: 100%;
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  /* background: linear-gradient(135deg, #c5bfca 0%, #cfd0d1 100%); */
+  display: flex;
+  flex-direction: column; /* allow navbar, content, footer stack */
+  min-height: 100vh;
+}
+
+/* Dashboard container fills page */
+.dashboard-container {
+  flex: 1; /* take all remaining height */
+  background: #fff;
+  padding: 40px;
+  border-radius: 0; /* full page, no rounded card */
+  width: 100%;
+  max-width: 100%; /* stretch full */
+  box-shadow: none; /* remove floating card effect */
+  text-align: center;
+  animation: fadeIn 0.6s ease-in-out;
+  overflow-y: auto; /* scroll if content grows */
+}
+
+/* Heading */
+.dashboard-container h2 {
+  margin-bottom: 20px;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Input fields */
+.dashboard-container input {
+  width: 100%;
+  max-width: 600px; /* keep readable */
+  padding: 12px 14px;
+  margin: 10px auto;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+  display: block;
+}
+
+.dashboard-container input:focus {
+  border-color: #2575fc;
+  box-shadow: 0 0 6px rgba(37, 117, 252, 0.5);
+}
+
+/* Buttons */
+.dashboard-container button {
+  width: 100%;
+  max-width: 600px;
+  padding: 14px;
+  margin: 15px auto;
+  background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: block;
+}
+
+.dashboard-container button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0px 6px 15px rgba(37, 117, 252, 0.4);
+}
+
+/* Messages */
+.dashboard-container p {
+  margin-top: 12px;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.dashboard-container p.success {
+  color: #2ecc71;
+}
+
+.dashboard-container p.error {
+  color: #e74c3c;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
